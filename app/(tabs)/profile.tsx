@@ -1,8 +1,12 @@
 import { Text, View, StyleSheet, FlatList } from "react-native";
 import { Image, ImageBackground } from "expo-image";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
 import { Colors } from "@/Components/Colors";
+
+
+import {AntDesign,SimpleLineIcons} from "@expo/vector-icons";
+
+
+
 import { Data_setting, Data_support } from "@/Data/data";
 import RenderItem from "@/Components/RenderItem";
 

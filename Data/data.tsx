@@ -36,3 +36,9 @@ export const Data_support = [
     title: "Rapport de bug",
   },
 ];
+
+export const Data_Annonces=[
+  {
+    
+  }
+]
