@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "titre": "Appartement moderne",
+      "titre": "Appartement ",
       "description": "Un superbe appartement avec une vue imprenable sur la ville.",
       "prix": 1200,
       "adresse": "123 Rue Principale, Paris, France",
@@ -20,6 +20,25 @@
     },
     {
       "id": 2,
+      "titre": "Studio cosy ",
+      "description": "Studio idéal pour une personne ou un couple, lumineux et bien situé.",
+      "prix": 800,
+      "adresse": "45 Avenue des Champs, Lyon, France",
+      "categorie": "Studio",
+      "image": [
+       "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg",
+       "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
+      ],
+      "nbre_chambre": 1,
+      "nbr_salle_bains": 1,
+      "espace_virtuel": "https://example.com/visite-virtuelle2",
+      "statut": "Loué",
+      "accessibilite": "Ascenseur",
+      "id_agent": 102,
+      "date_creation": "2025-03-08"
+    },
+    {
+      "id": 3,
       "titre": "Studio cosy ",
       "description": "Studio idéal pour une personne ou un couple, lumineux et bien situé.",
       "prix": 800,

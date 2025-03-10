@@ -10,7 +10,7 @@ export default function Annonces() {
       <Text>Mes annonces </Text>
 
       {/* Section Button pour afficher les annonces*/}
-      <View>
+      <View style={styles.container_appartement}>
 
         {Data_Appartements.map((item)=>(
           <AnnonceItem key={item.id} item={item}/>
@@ -34,15 +34,14 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  Container_information: {
+  container_appartement: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 20,
-    padding: 8,
-    borderWidth: 1,
-    borderRadius: 15,
-    borderColor: Colors.dark,
+    gap:10, 
+     //  backgroundColor:"orange",
+
+    justifyContent:'space-between',
+    flexWrap:'wrap'
+   
   },
 
   information: {
