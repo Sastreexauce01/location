@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, FlatList } from "react-native";
-import { Image } from "expo-image";
+import { Image, ImageBackground } from "expo-image";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
 import { Colors } from "@/Components/Colors";
 import { Data_setting, Data_support } from "@/Data/data";
 import RenderItem from "@/Components/RenderItem";
@@ -25,36 +26,42 @@ export default function Profile() {
       </View>
 
       {/* Section parametre */}
-      <View>
-        <Text>Parametre preference</Text>
-        <FlatList
-          data={Data_setting}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({ item }) => <RenderItem item={item} />}
-        />
+      <View style={{ gap: 10 }}>
+        <Text style={styles.title}>
+          Parametre et preference
+        </Text>
+        {Data_setting.map((item, index) => (
+          <RenderItem key={index} item={item} />
+        ))}
       </View>
       {/* Section Support */}
-      <View>
-        <Text>Support</Text>
-        <FlatList
-          data={Data_support}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({ item }) => <RenderItem item={item} />}
-        />
+      <View style={{ gap: 10 }}>
+        <Text style={styles.title}>Support</Text>
+        {Data_support.map((item, index) => (
+          <RenderItem key={index} item={item} />
+        ))}
       </View>
       {/* Section Deconnexion*/}
+
+      <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+        <SimpleLineIcons name="logout" size={24} color={Colors.error} />
+        <Text style={{ color: Colors.error, fontWeight: "500", fontSize: 20 }}>
+          Deconnexion
+        </Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flexDirection: "column",
+    flexDirection: "column",
     // alignItems: "center",
-    // justifyContent: "center",
-
-    marginTop: 20,
+    justifyContent: "space-between",
+    marginVertical: 20,
+    flex: 1,
     padding: 20,
+
   },
 
   Container_information: {
@@ -63,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     gap: 20,
     padding: 8,
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 15,
     borderColor: Colors.dark,
   },
@@ -76,5 +83,11 @@ const styles = StyleSheet.create({
     width: 75,
     height: 75,
     borderRadius: 50,
+  },
+
+  title: {
+    fontSize: 20,
+    fontWeight: "500",
+    color: Colors.dark,
   },
 });

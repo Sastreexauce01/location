@@ -1,5 +1,6 @@
-import { Text, View ,StyleSheet} from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { Colors } from "./Colors";
+import AntDesign from "@expo/vector-icons/AntDesign";
 type Props = {
   item: {
     icone: JSX.Element; // Type pour une icône React Native
@@ -9,17 +10,36 @@ type Props = {
 
 export default function RenderItem({ item }: Props) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", padding: 10 }}>
-      {item.icone}
-      <Text style={{ marginLeft: 10, fontSize: 16 }}>{item.title}</Text>
+    <View style={styles.container }>
+      <View style={styles.title}>
+        {item.icone}
+        <Text style={styles.text}>{item.title}</Text>
+      </View>
+
+      <AntDesign name="right" size={20} color={Colors.dark} />
     </View>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent:"space-between",
+    padding: 12,
+    marginVertical:4,
+    borderRadius: 15,
+    backgroundColor: Colors.light,
+   
+  },
 
-const styles=StyleSheet.create({
+  title:{
+    flexDirection: "row",
+    alignItems: "center",
+    gap:10,
+  },
 
-    container:{
-
-    },
+  text:{
+   fontSize: 20
+  },
 });
