@@ -62,9 +62,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     // alignItems: "center",
     justifyContent: "space-between",
-    marginVertical: 20,
+    // marginVertical: 20,
     flex: 1,
     padding: 20,
+    backgroundColor:'white',
 
   },
 

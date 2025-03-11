@@ -9,8 +9,11 @@ import {
   Modal,
   TouchableOpacity,
 } from "react-native";
+
 import { Colors } from "./Colors";
 import { MaterialIcons, SimpleLineIcons } from "@expo/vector-icons";
+import { Link } from "expo-router";
+import Options_Modal from "./Options_Modal";
 
 type Props = {
   item: {
@@ -27,85 +30,52 @@ export const AnnonceItem = ({ item }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => alert("Tu as cliqué")}>
-        {/* Image avec indicateur de chargement */}
-        <View style={styles.imageContainer}>
-          {isLoading && (
-            <ActivityIndicator
-              size="large"
-              color={Colors.primary}
-              style={styles.loader}
-            />
-          )}
-          <ImageBackground
-            source={{ uri: item.image[0] }}
-            style={styles.image}
-            resizeMode="cover"
-            onLoadEnd={() => setIsLoading(false)}
-          >
-            <View style={styles.overlay}>
-              <Text style={styles.tag}>Location</Text>
-              <Pressable onPress={() => setModalVisible(true)}>
-                <SimpleLineIcons
-                  name="options-vertical"
-                  size={25}
-                  color={Colors.light}
-                />
-              </Pressable>
-            </View>
-          </ImageBackground>
-        </View>
-
-        {/* Informations sur l'annonce */}
-        <View style={styles.container_information}>
-          <Text style={styles.title}>{item.titre}</Text>
-          <View style={styles.container_date}>
-            <MaterialIcons name="update" size={15} color={Colors.primary} />
-            <Text style={styles.date}>{item.date_creation}</Text>
+      <Link href={`../annonces/${item.id}`} asChild>
+        <Pressable>
+          {/* Image avec indicateur de chargement */}
+          <View style={styles.imageContainer}>
+            {isLoading && (
+              <ActivityIndicator
+                size="large"
+                color={Colors.primary}
+                style={styles.loader}
+              />
+            )}
+            <ImageBackground
+              source={{ uri: item.image[0] }}
+              style={styles.image}
+              resizeMode="cover"
+              onLoadEnd={() => setIsLoading(false)}
+            >
+              <View style={styles.overlay}>
+                <Text style={styles.tag}>Location</Text>
+                <Pressable onPress={() => setModalVisible(true)}>
+                  <SimpleLineIcons
+                    name="options-vertical"
+                    size={25}
+                    color={Colors.light}
+                  />
+                </Pressable>
+              </View>
+            </ImageBackground>
           </View>
-        </View>
-      </Pressable>
+
+          {/* Informations sur l'annonce */}
+          <View style={styles.container_information}>
+            <Text style={styles.title}>{item.titre}</Text>
+            <View style={styles.container_date}>
+              <MaterialIcons name="update" size={15} color={Colors.primary} />
+              <Text style={styles.date}>{item.date_creation}</Text>
+            </View>
+          </View>
+        </Pressable>
+      </Link>
 
       {/* MODAL */}
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <TouchableOpacity
-          style={styles.modalOverlay}
-          activeOpacity={1}
-          onPress={() => setModalVisible(false)}
-        >
-          <View style={styles.modalView}>
-            <TouchableOpacity
-              style={styles.modalButton}
-              onPress={() => alert("Voir détails")}
-            >
-              <Text style={styles.modalText}>Voir détails</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.modalButton}
-              onPress={() => alert("Modifier")}
-            >
-              <Text style={styles.modalText}>Modifier</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity
-              style={[styles.modalButton, styles.deleteButton]}
-              onPress={() => alert("Supprimer")}
-            >
-              <Text style={[styles.modalText, { color: "red" }]}>
-                Supprimer
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
-              <Text style={styles.closeText}>Annuler</Text>
-            </TouchableOpacity>
-          </View>
-        </TouchableOpacity>
-      </Modal>
+      <Options_Modal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </View>
   );
 };
