@@ -5,7 +5,10 @@ import { Colors } from "@/Components/Colors";
 const Button = () => {
   return (
     <View style={styles.container}>
-      <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+      <Pressable
+        style={styles.button}
+        onPress={() => alert("You pressed a button.")}
+      >
         <FontAwesome6 name="add" size={25} color="white" />
         <Text style={styles.text}>Creer une annonce</Text>
       </Pressable>
@@ -17,14 +20,15 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: {
-    width: 220,
+    width: "100%",
     height: 50,
-    //   backgroundColor:'orange'
-   
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
+
   button: {
     borderRadius: 30,
-    width: "100%",
+    width: 200,
     height: "100%",
     alignItems: "center",
     justifyContent: "center",

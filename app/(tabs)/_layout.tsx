@@ -19,7 +19,7 @@ export default function TabLayout() {
        
         name="index"
         options={{
-           title: "",
+           title: "Acceuil",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name="home-outline" color={color} size={24} />
           ),
@@ -38,7 +38,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="annonces"
         options={{
-          title: "Annonces",
+          title: "Mes annonces",
           tabBarIcon: ({ color, focused }) => (
             <AntDesign name="notification" size={24} color={color} />
           ),
