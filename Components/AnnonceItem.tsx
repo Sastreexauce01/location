@@ -30,7 +30,7 @@ export const AnnonceItem = ({ item }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Link href={`../annonces/${item.id}`} asChild>
+      <Link href={`../Screen/annonces/${item.id}`} asChild>
         <Pressable>
           {/* Image avec indicateur de chargement */}
           <View style={styles.imageContainer}>
