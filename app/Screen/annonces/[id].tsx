@@ -1,10 +1,12 @@
 import { useLocalSearchParams } from "expo-router";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image,SafeAreaView} from "react-native";
 import Data_Appartements from "@/Data/data-appartements.json";
-
+import { Colors } from "@/Components/Colors";
 export default function DetailsAnnonce() {
   const { id } = useLocalSearchParams();
-  const item = Data_Appartements.find((annonce) => annonce.id.toString() === id);
+  const item = Data_Appartements.find(
+    (annonce) => annonce.id.toString() === id
+  );
 
   if (!item) {
     return (

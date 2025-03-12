@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-
+import { Link } from "expo-router";
 export default function Index() {
   return (
     <View
@@ -10,6 +10,9 @@ export default function Index() {
       }}
     >
       <Text> Page Acceuil</Text>
+      <Link href="../Screen/connexion"> Page de connexion</Link>
+      <Link href="../Screen/inscription"> Page d'inscription</Link>
+
     </View>
   );
 }

@@ -7,32 +7,32 @@ import {
 import { Colors } from "@/Components/Colors";
 export const Data_setting = [
   {
-    icone: <FontAwesome5 name="crown" size={24} color={Colors.primary} />,
+    icone: <FontAwesome5 name="crown" size={20} color={Colors.primary} />,
     title: "Abonnement",
   },
   {
-    icone: <MaterialIcons name="bar-chart" size={24} color={Colors.primary} />,
+    icone: <MaterialIcons name="bar-chart" size={20} color={Colors.primary} />,
     title: "Statistiques",
   },
   {
     icone: (
-      <Ionicons name="notifications-outline" size={24} color={Colors.primary} />
+      <Ionicons name="notifications-outline" size={20} color={Colors.primary} />
     ),
     title: "Notifications",
   },
   {
-    icone: <Entypo name="language" size={24} color={Colors.primary} />,
+    icone: <Entypo name="language" size={20} color={Colors.primary} />,
     title: "Langue",
   },
 ];
 
 export const Data_support = [
   {
-    icone: <Entypo name="help" size={24} color={Colors.primary} />,
+    icone: <Entypo name="help" size={20} color={Colors.primary} />,
     title: "Centre d'aide",
   },
   {
-    icone: <MaterialIcons name="bug-report" size={24} color={Colors.primary} />,
+    icone: <MaterialIcons name="bug-report" size={20} color={Colors.primary} />,
     title: "Rapport de bug",
   },
 ];

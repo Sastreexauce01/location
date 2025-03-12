@@ -138,8 +138,8 @@ const styles = StyleSheet.create({
 
   title: {
     color: Colors.dark,
-    fontSize: 20,
-    fontWeight: "600",
+    fontSize: 15,
+    fontWeight: "500",
   },
 
   date: {

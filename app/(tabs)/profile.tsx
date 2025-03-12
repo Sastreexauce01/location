@@ -49,7 +49,7 @@ export default function Profile() {
 
       <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
         <SimpleLineIcons name="logout" size={24} color={Colors.error} />
-        <Text style={{ color: Colors.error, fontWeight: "500", fontSize: 20 }}>
+        <Text style={{ color: Colors.error, fontWeight: "500", fontSize: 15 }}>
           Deconnexion
         </Text>
       </View>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "500",
     color: Colors.dark,
   },
