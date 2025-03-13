@@ -5,17 +5,25 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="+not-found" />
-      <Stack.Screen name="Screen/annonces/[id]" options={{
-        title:"Detail Annonce "
-      }}/>
+      <Stack.Screen
+        name="Screen/annonces/[id]"
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name="Screen/connexion/index"
-        options={{ title: "Connexion",headerShown: false  }}
+        options={{ title: "Connexion", headerShown: false }}
       />
       <Stack.Screen
         name="Screen/inscription/index"
         options={{ title: "Inscription", headerShown: false }}
       />
+      <Stack.Screen
+        name="Screen/connexion/MotsPasseOublie"
+        options={{ title: "MotsPasseOublie",headerShown: false}}
+      />
     </Stack>
+
   );
 }

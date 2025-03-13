@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "titre": "Appartement ",
+      "titre": "Appartement Calavi ",
       "description": "Un superbe appartement avec une vue imprenable sur la ville.",
       "prix": 1200,
       "adresse": "123 Rue Principale, Paris, France",
@@ -58,7 +58,7 @@
     },
     {
       "id": 4,
-      "titre": "Appartement ",
+      "titre": "Appartement  Coco",
       "description": "Un superbe appartement avec une vue imprenable sur la ville.",
       "prix": 1200,
       "adresse": "123 Rue Principale, Paris, France",

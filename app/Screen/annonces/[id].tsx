@@ -1,5 +1,5 @@
 import { useLocalSearchParams } from "expo-router";
-import { View, Text, StyleSheet, Image,SafeAreaView} from "react-native";
+import { View, Text, StyleSheet, Image, SafeAreaView } from "react-native";
 import Data_Appartements from "@/Data/data-appartements.json";
 import { Colors } from "@/Components/Colors";
 export default function DetailsAnnonce() {
@@ -18,6 +18,14 @@ export default function DetailsAnnonce() {
 
   return (
     <View style={styles.container}>
+      {/* Section Caroussel image */}
+      {/* Section Titre */}
+      {/* Section Adress */}
+      {/* Section Acessibilite */}
+      {/* Section Description */}
+      {/* Section Maps */}
+      {/* Section Prendre Contact */}
+      
       <Image source={{ uri: item.image[0] }} style={styles.image} />
       <Text style={styles.title}>{item.titre}</Text>
       <Text style={styles.date}>Publié le: {item.date_creation}</Text>
@@ -29,13 +37,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    padding: 20,
+
     backgroundColor: "white",
   },
   image: {
     width: "100%",
-    height: 250,
-    borderRadius: 10,
+    height: 350,
+  
     marginBottom: 20,
   },
   title: {
