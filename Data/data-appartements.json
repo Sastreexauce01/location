@@ -1,23 +1,34 @@
+
+
 [
-    {
-      "id": 1,
-      "titre": "Appartement Calavi ",
-      "description": "Un superbe appartement avec une vue imprenable sur la ville.",
-      "prix": 1200,
-      "adresse": "123 Rue Principale, Paris, France",
-      "categorie": "Appartement",
-      "image": [
-       "https://res.cloudinary.com/dait4sfc5/image/upload/v1740654071/3d-contemporary-living-room-interior-modern-furniture_axav0n.jpg",
-        "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
-      ],
-      "nbre_chambre": 2,
-      "nbr_salle_bains": 1,
-      "espace_virtuel": "https://example.com/visite-virtuelle1",
-      "statut": "Disponible",
-      "accessibilite": "Ascenseur, Rampe PMR",
-      "id_agent": 101,
-      "date_creation": "2025-03-10"
-    },
+  {
+    "id": 1,
+    "titre": "Appartement Calavi",
+    "description": "Idéalement situé dans un quartier prisé, cet appartement spacieux et élégant offre un cadre de vie exceptionnel. Grâce à ses grandes baies vitrées, il bénéficie d’une luminosité naturelle remarquable tout au long de la journée. L'intérieur allie modernité et confort, avec un vaste salon ouvert sur une cuisine entièrement équipée, parfaite pour des moments conviviaux. Les chambres disposent de rangements intégrés, garantissant calme et intimité. La salle de bains, aménagée avec des matériaux haut de gamme, procure une véritable sensation de bien-être. \n\nProfitez également d’un balcon offrant une vue imprenable sur la ville, idéal pour des instants de détente. L’immeuble est sécurisé et dispose d’un ascenseur, d’un parking privé et d’un accès facilité aux transports en commun, commerces et écoles. \n\nCet appartement est parfait pour les familles, les jeunes professionnels ou les investisseurs recherchant un bien de qualité dans un environnement dynamique.",
+    "prix": 1200,
+    "adresse": "123 Rue Principale, Paris, France",
+    "categorie": "Appartement",
+    "image": [
+      "https://res.cloudinary.com/dait4sfc5/image/upload/v1740654071/3d-contemporary-living-room-interior-modern-furniture_axav0n.jpg",
+      "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
+    ],
+    "nbre_chambre": 2,
+    "nbr_salle_bains": 1,
+    "espace_virtuel": "https://example.com/visite-virtuelle1",
+    "statut": "Disponible",
+    "accessibilite": [
+      "Piscine",
+      "Television",
+      "Wifi",
+      "Terrasse",
+      "Parking",
+      "Plage",
+      "Climatisation",
+      "Cuisine"
+    ],
+    "id_agent": 101,
+    "date_creation": "2025-03-10"
+  },  
     {
       "id": 2,
       "titre": "Studio cosy ",
@@ -97,7 +108,7 @@
     {
       "id": 6,
       "titre": "Studio cosy ",
-      "description": "Studio idéal pour une personne ou un couple, lumineux et bien situé.",
+      "description": "Studio idéal pour une personne ou un couple, lumineux et bien situé. lorem",
       "prix": 800,
       "adresse": "45 Avenue des Champs, Lyon, France",
       "categorie": "Studio",
