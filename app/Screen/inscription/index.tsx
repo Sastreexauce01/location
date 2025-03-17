@@ -16,7 +16,7 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Fontisto from "@expo/vector-icons/Fontisto";
 
-const Login = () => {
+const Inscription = () => {
   const [emailValue, setEmailValue] = useState<string>("");
   const [passwordsValue, setPasswordsValue] = useState<string>("");
 
@@ -66,14 +66,14 @@ const Login = () => {
         <Pressable style={styles.Button}>
           <Text style={{ color: "white" }}>Connexion</Text>
         </Pressable>
-      </Link>   
+      </Link>
 
       {/* Lien pour la page Inscription */}
       <View style={styles.container_inscription}>
-        <Text style={{ color: Colors.dark }}>Vous n'avez pas de compte?</Text>
-        <Link href={"../Screen/inscription"} asChild>
+        <Text style={{ color: Colors.dark }}>Vous avez un compte?</Text>
+        <Link href={"../Screen/connexion"} asChild>
           <Text style={{ color: Colors.primary, fontWeight: 500 }}>
-            Inscrivez-vous ici
+            Connectez-vous-vous
           </Text>
         </Link>
       </View>
@@ -81,7 +81,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Inscription;
 
 const styles = StyleSheet.create({
   container: {

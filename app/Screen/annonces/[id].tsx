@@ -3,34 +3,25 @@ import {
   Text,
   StyleSheet,
   Image,
-  SafeAreaView,
   ScrollView,
   Pressable,
+  ActivityIndicator,
 } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import {
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactNode,
-  ReactPortal,
-  useState,
-} from "react";
+import { useState } from "react";
 import Entypo from "@expo/vector-icons/Entypo";
-
+import { SwiperFlatList } from "react-native-swiper-flatlist";
 import Data_Appartements from "@/Data/data-appartements.json";
 import Acessibilite from "@/Components/Acessibilite";
 import { Colors } from "@/Components/Colors";
 
 export default function DetailsAnnonce() {
-  //Recuperation de l'id dans le lien
   const { id } = useLocalSearchParams();
+  const [isLoading, setIsLoading] = useState(true);
+
   const item = Data_Appartements.find(
     (annonce) => annonce.id.toString() === id
   );
-
-  const [isLoading, setIsLoading] = useState(true); // État de chargement
-  const [modalVisible, setModalVisible] = useState(false); // État du modal
 
   if (!item) {
     return (
@@ -43,60 +34,76 @@ export default function DetailsAnnonce() {
   return (
     <View style={styles.container}>
       <ScrollView
-        contentContainerStyle={[styles.scrollContainer]}
+        contentContainerStyle={styles.scrollContainer}
         showsVerticalScrollIndicator={false}
       >
         {/* Section Caroussel image */}
-        <Image source={{ uri: item.image[0] }} style={styles.image} />
+        <View style={styles.container_carousel}>
+          {isLoading && (
+            <ActivityIndicator
+              size="large"
+              color={Colors.primary}
+              style={styles.loader}
+            />
+          )}
+          <SwiperFlatList
+            //autoplay
+           // autoplayDelay={6}
+           // autoplayLoop
+            index={2}
+            showPagination
+            onChangeIndex={() => setIsLoading(false)}
+          >
+            {Array.isArray(item.image) && item.image.length > 0 ? (
+              item.image.map((img, index) => (
+                <View key={index} style={styles.container_image}>
+                  <Image
+                    source={{ uri: img }}
+                    style={styles.image_carousel}
+                    onLoadEnd={() => setIsLoading(false)}
+                  />
+                </View>
+              ))
+            ) : (
+              <Text style={styles.noImageText}>Aucune image disponible</Text>
+            )}
+          </SwiperFlatList>
+        </View>
 
         <View style={styles.container_information}>
-          {/* Section Titre */}
           <Text style={styles.title}>{item.titre}</Text>
 
-          {/* Section Adress */}
           <View style={styles.container_adresse}>
             <Entypo name="location" size={24} color={Colors.primary} />
-            <Text style={{ fontSize: 15 }}> {item.adresse} </Text>
+            <Text style={styles.adresse}>{item.adresse}</Text>
           </View>
 
-          {/* Section Acessibilite */}
           <View style={styles.container_accessibilite}>
             {Array.isArray(item.accessibilite) ? (
               item.accessibilite.map((acces, index) => (
                 <Acessibilite acces={acces} key={index} />
               ))
             ) : (
-              <Text>{item.accessibilite}</Text> // Si c'est une chaîne de caractères
+              <Text>{item.accessibilite}</Text>
             )}
           </View>
 
-          {/* Section Description */}
           <View>
-            <Text
-              style={{ fontSize: 25, fontWeight: "500", color: Colors.dark }}
-            >
-              Description
-            </Text>
+            <Text style={styles.sectionTitle}>Description</Text>
             <Text style={styles.description}>{item.description}</Text>
-          </View>
-
-          {/* Section Maps */}
-          <View>
-            <Text>Maps</Text>
           </View>
 
           <Text style={styles.date}>Publié le: {item.date_creation}</Text>
         </View>
       </ScrollView>
 
-      {/* Section Prendre Contact */}
       <View style={styles.container_contact}>
-        <Text style={{color:Colors.dark, fontSize:20, fontWeight:'500'}}>{item.prix}F cfa /mois</Text>
+        <Text style={styles.prix}>{item.prix} F CFA / mois</Text>
         <Pressable
           style={styles.button}
-          onPress={() => alert("ok sur whatsapp")}
+          onPress={() => alert("Contact via WhatsApp")}
         >
-          <Text style={{ color: "white", fontSize: 20 }}>Prendre contact</Text>
+          <Text style={styles.buttonText}>Prendre contact</Text>
         </Pressable>
       </View>
     </View>
@@ -108,57 +115,73 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
-
   scrollContainer: {
-    paddingBottom: 100, // Pour éviter que les annonces ne soient cachées par le bouton
+    paddingBottom: 100,
   },
-
-  image: {
+  container_carousel: {
+    height: 450,
     width: "100%",
-    height: 350,
-
-    marginBottom: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  container_image: {
+    backgroundColor: "black",
+    width: 450,
+  },
+  image_carousel: {
+    width: "100%",
+    height: "100%",
+  },
+  loader: {
+    position: "absolute",
+    alignSelf: "center",
+    zIndex: 1,
+  },
+  noImageText: {
+    textAlign: "center",
+    color: "gray",
+    fontSize: 16,
+    marginTop: 20,
   },
   container_information: {
     padding: 20,
-    flexDirection: "column",
-    justifyContent: "center",
     gap: 20,
-  },
-  container_accessibilite: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    //justifyContent:'space-between',
-    columnGap: 40,
-    rowGap: 20,
-    //backgroundColor:'red',
-  },
-
-  description: {
-    fontSize: 16,
-    color: "gray",
-    lineHeight: 24, // Pour une meilleure lisibilité
-    marginBottom: 15,
-    textAlign: "justify",
-    paddingVertical: 10,
   },
   title: {
     fontSize: 22,
     fontWeight: "bold",
-    marginBottom: 10,
     color: Colors.dark,
   },
-
   container_adresse: {
     flexDirection: "row",
     alignItems: "center",
     gap: 5,
   },
+  adresse: {
+    fontSize: 15,
+  },
+  container_accessibilite: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    columnGap: 40,
+    rowGap: 20,
+  },
+  sectionTitle: {
+    fontSize: 25,
+    fontWeight: "500",
+    color: Colors.dark,
+  },
+  description: {
+    fontSize: 16,
+    color: "gray",
+    lineHeight: 24,
+    textAlign: "justify",
+    paddingVertical: 10,
+  },
   date: {
     fontSize: 14,
     color: "gray",
   },
-
   container_contact: {
     width: "100%",
     backgroundColor: "white",
@@ -171,15 +194,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     padding: 20,
-    paddingBottom:30,
-    zIndex: 2,
-    
+    paddingBottom: 30,
+  },
+  prix: {
+    color: Colors.dark,
+    fontSize: 20,
+    fontWeight: "500",
   },
   button: {
     backgroundColor: Colors.primary,
     padding: 15,
     borderRadius: 30,
     alignItems: "center",
-    
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 20,
   },
 });

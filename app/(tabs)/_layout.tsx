@@ -10,16 +10,15 @@ export default function TabLayout() {
         tabBarActiveTintColor: "#7065F0",
         headerStyle: {
           //  backgroundColor: "#7065F0",
-         },
+        },
         headerShadowVisible: false,
         // headerTintColor: "#fffff",//text en blanc
       }}
     >
       <Tabs.Screen
-       
         name="index"
         options={{
-           title: "Acceuil",
+          title: "Acceuil",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name="home-outline" color={color} size={24} />
           ),

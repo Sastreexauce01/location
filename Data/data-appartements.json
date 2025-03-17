@@ -10,10 +10,13 @@
     "categorie": "Appartement",
     "image": [
       "https://res.cloudinary.com/dait4sfc5/image/upload/v1740654071/3d-contemporary-living-room-interior-modern-furniture_axav0n.jpg",
+      "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg",
+      "https://res.cloudinary.com/dait4sfc5/image/upload/v1740654071/3d-contemporary-living-room-interior-modern-furniture_axav0n.jpg",
       "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
+
     ],
     "nbre_chambre": 2,
-    "nbr_salle_bains": 1,
+    "nbre_salle_bains": 1,
     "espace_virtuel": "https://example.com/visite-virtuelle1",
     "statut": "Disponible",
     "accessibilite": [
@@ -41,7 +44,7 @@
        "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
       ],
       "nbre_chambre": 1,
-      "nbr_salle_bains": 1,
+      "nbre_salle_bains": 1,
       "espace_virtuel": "https://example.com/visite-virtuelle2",
       "statut": "Loué",
       "accessibilite": "Ascenseur",
@@ -60,7 +63,7 @@
        "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
       ],
       "nbre_chambre": 1,
-      "nbr_salle_bains": 1,
+      "nbre_salle_bains": 1,
       "espace_virtuel": "https://example.com/visite-virtuelle2",
       "statut": "Loué",
       "accessibilite": "Ascenseur",
@@ -79,7 +82,7 @@
         "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
       ],
       "nbre_chambre": 2,
-      "nbr_salle_bains": 1,
+      "nbre_salle_bains": 1,
       "espace_virtuel": "https://example.com/visite-virtuelle1",
       "statut": "Disponible",
       "accessibilite": "Ascenseur, Rampe PMR",
@@ -98,7 +101,7 @@
        "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
       ],
       "nbre_chambre": 1,
-      "nbr_salle_bains": 1,
+      "nbre_salle_bains": 1,
       "espace_virtuel": "https://example.com/visite-virtuelle2",
       "statut": "Loué",
       "accessibilite": "Ascenseur",
@@ -117,7 +120,7 @@
        "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
       ],
       "nbre_chambre": 1,
-      "nbr_salle_bains": 1,
+      "nbre_salle_bains": 1,
       "espace_virtuel": "https://example.com/visite-virtuelle2",
       "statut": "Loué",
       "accessibilite": "Ascenseur",
@@ -136,7 +139,7 @@
        "https://res.cloudinary.com/dait4sfc5/image/upload/v1740653989/bangkok-thailand-august-12-2016-beautiful-luxury-living-room_zsc6ui.jpg"
       ],
       "nbre_chambre": 1,
-      "nbr_salle_bains": 1,
+      "nbre_salle_bains": 1,
       "espace_virtuel": "https://example.com/visite-virtuelle2",
       "statut": "Loué",
       "accessibilite": "Ascenseur",

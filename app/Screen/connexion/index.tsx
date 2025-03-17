@@ -21,63 +21,68 @@ const Login = () => {
   const [passwordsValue, setPasswordsValue] = useState<string>("");
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={{
-          uri: "https://res.cloudinary.com/dait4sfc5/image/upload/v1741799422/Banniere_login_ij56s0.png",
-        }}
-        style={styles.image}
-      />
-      {/* Section de input */}
-      <View>
-        <View style={styles.container_input}>
-          <MaterialIcons name="email" size={20} color={Colors.primary} />
-          <TextInput
-            style={styles.input}
-            onChangeText={setEmailValue}
-            value={emailValue}
-            placeholder="Adress email"
-            keyboardType="email-address"
-          />
-        </View>
-        {/* Input Passwords */}
-        <View style={styles.container_input}>
-          <Fontisto name="unlocked" size={20} color={Colors.primary} />
-          <TextInput
-            style={styles.input}
-            onChangeText={setPasswordsValue}
-            value={passwordsValue}
-            placeholder="Mots de passe"
-            keyboardType="email-address"
-          />
-        </View>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      style={{ flex: 1 }}
+    >
+      <View style={styles.container}>
+        <Image
+          source={{
+            uri: "https://res.cloudinary.com/dait4sfc5/image/upload/v1741799422/Banniere_login_ij56s0.png",
+          }}
+          style={styles.image}
+        />
+        {/* Section de input */}
+        <View>
+          <View style={styles.container_input}>
+            <MaterialIcons name="email" size={20} color={Colors.primary} />
+            <TextInput
+              style={styles.input}
+              onChangeText={setEmailValue}
+              value={emailValue}
+              placeholder="Adress email"
+              keyboardType="email-address"
+            />
+          </View>
+          {/* Input Passwords */}
+          <View style={styles.container_input}>
+            <Fontisto name="unlocked" size={20} color={Colors.primary} />
+            <TextInput
+              style={styles.input}
+              onChangeText={setPasswordsValue}
+              value={passwordsValue}
+              placeholder="Mots de passe"
+              keyboardType="email-address"
+            />
+          </View>
 
-        <View style={{ alignItems: "flex-end" }}>
-          <Link
-            href={"/Screen/connexion/MotsPasseOublie"}
-            style={{ fontWeight: "500", color: Colors.primary }}
-          >
-            Mots de passe oublie ?
+          <View style={{ alignItems: "flex-end" }}>
+            <Link
+              href={"/Screen/connexion/MotsPasseOublie"}
+              style={{ fontWeight: "500", color: Colors.primary }}
+            >
+              Mots de passe oublie ?
+            </Link>
+          </View>
+        </View>
+        {/* Section Button  */}
+        <Link href={"../"} asChild>
+          <Pressable style={styles.Button}>
+            <Text style={{ color: "white" }}>Connexion</Text>
+          </Pressable>
+        </Link>
+
+        {/* Lien pour la page Inscription */}
+        <View style={styles.container_inscription}>
+          <Text style={{ color: Colors.dark }}>Vous n'avez pas de compte?</Text>
+          <Link href={"../Screen/inscription"} asChild>
+            <Text style={{ color: Colors.primary, fontWeight: 500 }}>
+              Inscrivez-vous ici
+            </Text>
           </Link>
         </View>
       </View>
-      {/* Section Button  */}
-      <Link href={"../"} asChild>
-        <Pressable style={styles.Button}>
-          <Text style={{ color: "white" }}>Connexion</Text>
-        </Pressable>
-      </Link>   
-
-      {/* Lien pour la page Inscription */}
-      <View style={styles.container_inscription}>
-        <Text style={{ color: Colors.dark }}>Vous n'avez pas de compte?</Text>
-        <Link href={"../Screen/inscription"} asChild>
-          <Text style={{ color: Colors.primary, fontWeight: 500 }}>
-            Inscrivez-vous ici
-          </Text>
-        </Link>
-      </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
