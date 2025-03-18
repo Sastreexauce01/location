@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
 
   flatListContainer:{
-    gap: 20,
+    gap: 25,
     marginLeft: 15,
     paddingRight: 20,
   },
